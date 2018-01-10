@@ -24,7 +24,7 @@ public class ShipmentCapturePage extends PageObject {
     @FindBy(id = "shipment-capture-component_create-button")
     WebElement createButton;
 
-    public void createShipment() {
+    public void createShipment1() {
 
         formFieldSender.sendKeys("Apple");
         $("//ul//li[contains(.,\"Apple\")]").waitUntilVisible();
@@ -37,5 +37,65 @@ public class ShipmentCapturePage extends PageObject {
         formFieldReceiver.sendKeys(Keys.RETURN);
 
         clickOn(createButton);
+    }
+
+    public void createShipment2() {
+
+        formFieldSender.sendKeys("Apple");
+        $("//ul//li[contains(.,\"Apple\")]").waitUntilVisible();
+        formFieldSender.sendKeys(Keys.DOWN);
+        formFieldSender.sendKeys(Keys.RETURN);
+
+        formFieldReceiver.sendKeys("Daimler AG");
+        $("//ul//li[contains(.,\"Daimler AG\")]").waitUntilVisible();
+        formFieldReceiver.sendKeys(Keys.DOWN);
+        formFieldReceiver.sendKeys(Keys.RETURN);
+
+        clickOn(createButton);
+    }
+
+    public void createShipment3() {
+
+        formFieldSender.sendKeys("NovaTec Consulting GmbH");
+        $("//ul//li[contains(.,\"NovaTec Consulting GmbH\")]").waitUntilVisible();
+        formFieldSender.sendKeys(Keys.DOWN);
+        formFieldSender.sendKeys(Keys.RETURN);
+
+        formFieldReceiver.sendKeys("Apple");
+        $("//ul//li[contains(.,\"Apple\")]").waitUntilVisible();
+        formFieldReceiver.sendKeys(Keys.DOWN);
+        formFieldReceiver.sendKeys(Keys.RETURN);
+
+        clickOn(createButton);
+    }
+
+    public void createShipment4() {
+
+        formFieldSender.sendKeys("Daimler AG");
+        $("//ul//li[contains(.,\"Daimler AG\")]").waitUntilVisible();
+        formFieldSender.sendKeys(Keys.DOWN);
+        formFieldSender.sendKeys(Keys.RETURN);
+
+        formFieldReceiver.sendKeys("NovaTec Consulting GmbH");
+        $("//ul//li[contains(.,\"NovaTec Consulting GmbH\")]").waitUntilVisible();
+        formFieldReceiver.sendKeys(Keys.DOWN);
+        formFieldReceiver.sendKeys(Keys.RETURN);
+
+        clickOn(createButton);
+    }
+
+    public void createShipment5() {
+
+         formFieldSender.sendKeys("NovaTec Consulting GmbH");
+         $("//ul//li[contains(.,\"NovaTec Consulting GmbH\")]").waitUntilVisible();
+         formFieldSender.sendKeys(Keys.DOWN);
+         formFieldSender.sendKeys(Keys.RETURN);
+
+         formFieldReceiver.sendKeys("Daimler AG");
+         $("//ul//li[contains(.,\"Daimler AG\")]").waitUntilVisible();
+         formFieldReceiver.sendKeys(Keys.DOWN);
+         formFieldReceiver.sendKeys(Keys.RETURN);
+
+         clickOn(createButton);
     }
 }

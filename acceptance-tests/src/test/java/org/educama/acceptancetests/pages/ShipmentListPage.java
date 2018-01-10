@@ -26,7 +26,7 @@ public class ShipmentListPage extends PageObject {
     @FindBy(id = "shipment-list-page_new-button")
     WebElement newButton;
 
-    public List<String> getShipmentsList() {
+    public List<String> getShipmentsList(int columnid) {
         List<String> shipmentsList = new ArrayList<String>();
         // Now get all the TR elements from the table
         List<WebElement> allRows = listOfShipments.findElements(By.tagName("tr"));
@@ -35,7 +35,7 @@ public class ShipmentListPage extends PageObject {
                 .map(row -> {
                     List<WebElement> cells = row.findElements(By.tagName("td"));
                     // row must have more than one column. Otherwise it is the "No records found." message.
-                    return cells.size() > 1 ? cells.get(0).getText() : null;
+                    return cells.size() > 1 ? cells.get(columnid).getText() : null;
                 })
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
